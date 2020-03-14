@@ -12,14 +12,10 @@ class NativeDictionary:
         return int(summ % self.size)
 
     def is_key(self, key):
-        try:
-            if self.slots[key]:
-                return True
-            else:
-                return False
-        except IndexError:
+        if key in self.slots:
+            return True
+        else:
             return False
-
 
     def put(self, key, value):
         if self.is_key(key):
